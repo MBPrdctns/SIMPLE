@@ -20,6 +20,8 @@ def get_environment(env_name):
         elif env_name in ('frouge'):
             from frouge.envs.frouge import FlammeRougeEnv
             return FlammeRougeEnv
+        elif env_name in ('minihex'):
+            from minihex.envs.minihex import HexEnv
         else:
             raise Exception(f'No environment found for {env_name}')
     except SyntaxError as e:
@@ -31,7 +33,7 @@ def get_environment(env_name):
 
 
 def get_network_arch(env_name):
-    if env_name in ('tictactoe'):
+    if env_name in ('tictactoe', 'minihex'):
         from models.tictactoe.models import CustomPolicy
         return CustomPolicy
     elif env_name in ('connect4'):

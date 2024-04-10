@@ -1,0 +1,1 @@
+from minihex.envs.minihex import HexEnv
